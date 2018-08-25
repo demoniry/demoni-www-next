@@ -23,12 +23,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    'gatsby-transformer-remark',
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        environment: isDev ? 'master' : 'master',
+        host: isDev ? 'preview.contentful.com' : 'cdn.contentful.com',
+        environment: 'master',
       },
     },
   ],
