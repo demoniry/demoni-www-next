@@ -17,15 +17,20 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "develop": "gatsby develop"
   },
   "devDependencies": {
-    "prettier": "^1.15.3"
+    "husky": "^1.2.1",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/demoniry/demoni-www-next"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
