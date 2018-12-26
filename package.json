@@ -17,7 +17,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop"
+    "develop": "gatsby develop",
+    "postshrinkwrap": "sed -i '' -e 's/http:/https:/' package-lock.json"
   },
   "devDependencies": {
     "husky": "^1.2.1",
