@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -62,7 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
         const { id, slug, blocks } = edge.node
         createPage({
           path: `/${slug}/`,
-          component: path.resolve('./src/templates/page.js'),
+          component: path.resolve("./src/templates/page.js"),
           context: {
             id,
             slug,
