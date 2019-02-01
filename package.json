@@ -3,12 +3,10 @@
   "description": "",
   "version": "0.0.0",
   "dependencies": {
-    "dotenv": "^6.2.0",
     "gatsby": "^2.0.76",
     "gatsby-plugin-manifest": "^2.0.12",
     "gatsby-plugin-offline": "^2.0.20",
     "gatsby-plugin-react-helmet": "^3.0.5",
-    "gatsby-source-contentful": "^2.0.21",
     "gatsby-transformer-remark": "^2.1.17",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
