@@ -1,19 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Helmet from "react-helmet"
+import SEO from "../components/SEO"
 
 export default function PageTemplate({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
+  const { title, description } = frontmatter
 
   return (
     <React.Fragment>
-      <Helmet>
-        <title>{frontmatter.title}</title>
-      </Helmet>
+      <SEO title={title} description={description} />
 
       <div className="page">
-        <h1>{frontmatter.title}</h1>
+        <h1>{title}</h1>
         <div
           className="page-content"
           dangerouslySetInnerHTML={{ __html: html }}
@@ -28,6 +27,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $markdownId }) {
       frontmatter {
         title
+        description
       }
       html
     }

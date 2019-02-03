@@ -1,5 +1,8 @@
 ---
 title: Demoni ry
+description:
+  Demoni ry on Metropolia Ammattikorkeakoulun kulttuurin opiskelijoiden
+  opiskelijayhdistys.
 ---
 
 Demoni ry on Metropolia Ammattikorkeakoulun kulttuurin opiskelijoiden
