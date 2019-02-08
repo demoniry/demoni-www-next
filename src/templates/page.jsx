@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import "../styles/globalStyles.scss"
 import SEO from "../components/SEO"
+import Page from "../components/Page"
 
 export default function PageTemplate({ data }) {
   const { markdownRemark } = data
@@ -11,14 +12,7 @@ export default function PageTemplate({ data }) {
   return (
     <React.Fragment>
       <SEO title={title} description={description} />
-
-      <div className="page">
-        <h1>{title}</h1>
-        <div
-          className="page-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
+      <Page title={title} html={html} />
     </React.Fragment>
   )
 }
