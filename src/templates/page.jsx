@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import "../styles/globalStyles.scss"
 import SEO from "../components/SEO"
 
 export default function PageTemplate({ data }) {

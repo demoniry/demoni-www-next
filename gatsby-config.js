@@ -1,8 +1,14 @@
+const postCssPresetEnv = require("postcss-preset-env")
+
 module.exports = {
   siteMetadata: {
     title: "Demoni ry",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-sass",
+      options: { postCssPlugins: [postCssPresetEnv()] },
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-manifest",
