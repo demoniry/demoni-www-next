@@ -3,24 +3,20 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 
 function SEO({ title, lang, description, image, imageAlt }) {
-  let meta = []
-
-  if (description || image) {
-    meta.push(
-      {
-        property: "og:type",
-        content: "website",
-      },
-      {
-        name: "twitter:card",
-        content: "summary",
-      },
-      {
-        property: "og:title",
-        content: title,
-      }
-    )
-  }
+  const meta = [
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      name: "twitter:card",
+      content: "summary",
+    },
+    {
+      property: "og:title",
+      content: title,
+    },
+  ]
 
   if (description) {
     meta.push(
@@ -46,13 +42,19 @@ function SEO({ title, lang, description, image, imageAlt }) {
         content: image,
       }
     )
-  }
 
-  if (image && imageAlt) {
-    meta.push({
-      property: "twitter:image:alt",
-      content: imageAlt,
-    })
+    if (imageAlt) {
+      meta.push(
+        {
+          property: "og:image:alt",
+          content: imageAlt,
+        },
+        {
+          property: "twitter:image:alt",
+          content: imageAlt,
+        }
+      )
+    }
   }
 
   return <Helmet htmlAttributes={{ lang }} title={title} meta={meta} />
