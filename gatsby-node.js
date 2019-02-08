@@ -29,10 +29,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: pagePathFactory(node.name),
         component: pageTemplate,
         context: {
-          markdownId: node.childMarkdownRemark
-            ? node.childMarkdownRemark.id
-            : null,
-          isFrontPage: node.name === "index",
+          markdownId: node.childMarkdownRemark.id,
         },
       })
     })
