@@ -116,23 +116,20 @@ collections:
               - name: title
                 label: Title
                 widget: string
-              - name: destination
-                label: Destination
-                widget: relation
-                collection: pages
-                searchFields: ["title"]
-                valueField: title
+              - name: url
+                label: URL
+                widget: string
+                hint: For internal links use form /yhdistys/
               - name: items
                 label: Subitems
+                label_singular: Subitem
                 required: false
                 widget: list
                 fields:
                   - name: title
                     label: Title
                     widget: string
-                  - name: destination
-                    label: Destination
-                    widget: relation
-                    collection: pages
-                    searchFields: ["title"]
-                    valueField: title
+                  - name: url
+                    label: URL
+                    widget: string
+                    hint: For internal links use form /hallitus/
