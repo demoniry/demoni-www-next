@@ -1,0 +1,52 @@
+.Navigation {
+  &--secondary {
+    font-size: 0.9em;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0 -2rem;
+  }
+
+  &__item {
+    flex: 0 0 auto;
+    display: flex;
+    margin: 1.5rem 2rem;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+
+    &:hover,
+    &--active {
+      text-decoration: underline;
+    }
+  }
+
+  &__item--logo &__link {
+    span {
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 2em;
+      height: 2em;
+      background-image: url(../images/icon.svg);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: contain;
+    }
+  }
+}
