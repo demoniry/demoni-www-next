@@ -3,6 +3,13 @@
 :root {
   @include variables;
   font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 ::selection {
@@ -15,7 +22,7 @@ body {
   font-size: 1.8rem;
   background-color: var(--color-background);
   color: var(--color-text);
-  line-height: 1.4;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -26,6 +33,12 @@ h4,
 h5,
 h6,
 p,
-figure {
+figure,
+ul,
+ol {
   margin: 0;
+}
+
+a {
+  color: inherit;
 }
