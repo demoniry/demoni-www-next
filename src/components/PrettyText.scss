@@ -6,10 +6,27 @@
   h5,
   h6,
   p,
-  figure {
-    margin-top: 2rem;
+  figure,
+  ul,
+  ol {
+    margin-top: 3rem;
 
     &:first-child {
+      margin-top: 0;
+    }
+
+    + p,
+    + figure,
+    + ul,
+    + ol {
+      margin-top: 1.5rem;
+    }
+  }
+
+  ul,
+  ol {
+    ul,
+    ol {
       margin-top: 0;
     }
   }
