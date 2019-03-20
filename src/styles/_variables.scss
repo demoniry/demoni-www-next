@@ -6,6 +6,8 @@
   $fontBody: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
+  $easing: cubic-bezier(0.23, 1, 0.32, 1);
+
   // Following variables can be used with CSS's var()
   // Like this:
   // background-color: var(--color-brand);
@@ -14,6 +16,7 @@
     --color-text: $color-gray,
     --color-background: $color-white,
     --font-body: $fontBody,
+    --easing-default: $easing,
   );
 
   @each $name, $value in $variables {
