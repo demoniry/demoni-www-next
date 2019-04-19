@@ -1,0 +1,14 @@
+@mixin bp($bp: md, $min-max: min) {
+  $width: 992px; // md, desktops
+  @if ($bp == sm) {
+    $width: 425px; // sm, phones in vertical orientation
+  }
+
+  @if ($min-max == max) {
+    $width: $width - 1;
+  }
+
+  @media (#{$min-max}-width: $width) {
+    @content;
+  }
+}

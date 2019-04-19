@@ -1,0 +1,20 @@
+.Toggle {
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+
+  &::after {
+    content: "\25B6"; // Triangle pointing right
+    margin-left: 0.75em;
+  }
+
+  &--toggled {
+    &::after {
+      content: "\25BC"; // Triangle pointing down
+    }
+  }
+}

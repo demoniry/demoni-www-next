@@ -1,7 +1,50 @@
+@import "../styles/mixins/bp";
+
 .Page {
-  &__content {
-    margin-top: 4rem;
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
     margin-bottom: 4rem;
+
+    @include bp {
+      flex-direction: row;
+      margin-top: 4rem;
+    }
+  }
+
+  &__sidebar {
+    margin-bottom: 4rem;
+
+    @include bp {
+      order: 1;
+      margin-left: 7rem;
+      width: 35%;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__toc-toggle {
+    @include bp {
+      display: none;
+    }
+  }
+
+  &__toc {
+    margin-top: 2rem;
+
+    &--hidden {
+      @include bp($min-max: max) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 80rem;
   }
 
   &__title {

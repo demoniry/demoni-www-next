@@ -9,10 +9,13 @@ export default function PageTemplate({ data }) {
   const { frontmatter, html } = markdownRemark
   const { title, description } = frontmatter
 
+  // Remove front slashes from anchor links
+  const tableOfContents = markdownRemark.tableOfContents.replace(/"\/#/g, '"#')
+
   return (
     <React.Fragment>
       <SEO title={title} description={description} />
-      <Page title={title} html={html} />
+      <Page title={title} html={html} tableOfContents={tableOfContents} />
     </React.Fragment>
   )
 }
@@ -25,6 +28,7 @@ export const pageQuery = graphql`
         description
       }
       html
+      tableOfContents(pathToSlugField: "fields.emptyString")
     }
   }
 `

@@ -35,3 +35,12 @@ exports.createPages = ({ actions, graphql }) => {
     })
   })
 }
+
+// Add a node field containing empty string to every Markdown node
+exports.onCreateNode = ({ actions, node }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === "MarkdownRemark") {
+    createNodeField({ node, name: "emptyString", value: "" })
+  }
+}
