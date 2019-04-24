@@ -10,9 +10,13 @@ import "./Page.scss"
 function Page({ title, html, tableOfContents }) {
   const [tocIsVisible, setTocVisibility] = useState(false)
 
+  function toggleTocVisibility() {
+    setTocVisibility(!tocIsVisible)
+  }
+
   let sidebarClassName = "Page__sidebar"
   if (!tableOfContents) {
-    sidebarClassName += " Page__sidebar--hidden"
+    sidebarClassName += " Page__sidebar--empty"
   }
 
   let tocClassName = "Page__toc"
@@ -43,7 +47,7 @@ function Page({ title, html, tableOfContents }) {
               <Toggle
                 text="Sisällysluettelo"
                 toggled={tocIsVisible}
-                onClick={() => setTocVisibility(!tocIsVisible)}
+                onClick={toggleTocVisibility}
               />
             </div>
             <div className={tocClassName}>
