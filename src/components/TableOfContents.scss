@@ -1,3 +1,5 @@
+@import "../styles/mixins/bp";
+
 .TableOfContents {
   font-size: 0.9em;
 
@@ -16,5 +18,21 @@
 
   > ul > li:first-child {
     margin-top: 0;
+  }
+
+  &__toggle {
+    margin-bottom: 1.5rem;
+
+    @include bp {
+      display: none;
+    }
+  }
+
+  &__toc {
+    &--hidden {
+      @include bp($min-max: max) {
+        display: none;
+      }
+    }
   }
 }

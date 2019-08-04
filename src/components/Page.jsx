@@ -1,27 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import Header from "./Header"
 import Container from "./Container"
-import Toggle from "./Toggle"
 import TableOfContents from "./TableOfContents"
 import PrettyText from "./PrettyText"
 import "./Page.scss"
 
 function Page({ title, html, tableOfContents }) {
-  const [tocIsVisible, setTocVisibility] = useState(false)
-
-  function toggleTocVisibility() {
-    setTocVisibility(!tocIsVisible)
-  }
-
   let sidebarClassName = "Page__sidebar"
   if (!tableOfContents) {
     sidebarClassName += " Page__sidebar--empty"
-  }
-
-  let tocClassName = "Page__toc"
-  if (!tocIsVisible) {
-    tocClassName += " Page__toc--hidden"
   }
 
   return (
@@ -43,14 +31,7 @@ function Page({ title, html, tableOfContents }) {
       <Container>
         <div className="Page__layout">
           <div className={sidebarClassName}>
-            <div className="Page__toc-toggle">
-              <Toggle
-                text="Sisällysluettelo"
-                toggled={tocIsVisible}
-                onClick={toggleTocVisibility}
-              />
-            </div>
-            <div className={tocClassName}>
+            <div className="Page__toc">
               <TableOfContents html={tableOfContents} />
             </div>
           </div>

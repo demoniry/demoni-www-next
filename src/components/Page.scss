@@ -27,22 +27,6 @@
     }
   }
 
-  &__toc-toggle {
-    margin-bottom: 1.5rem;
-
-    @include bp {
-      display: none;
-    }
-  }
-
-  &__toc {
-    &--hidden {
-      @include bp($min-max: max) {
-        display: none;
-      }
-    }
-  }
-
   &__content {
     max-width: 80rem;
   }
